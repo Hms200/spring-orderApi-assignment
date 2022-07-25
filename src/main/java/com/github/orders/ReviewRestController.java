@@ -42,7 +42,7 @@ public class ReviewRestController {
                                @AuthenticationPrincipal JwtAuthentication authentication) throws IllegalArgumentException , IllegalStateException {
         System.out.println("=========  start ================");
         long userId = authentication.id;
-        if(review.getContent().equals(null) || review.getContent().equals("")) {
+        if(review.getContent() == null || review.getContent().equals("")) {
             throw new HttpMessageNotReadableException("empty content");
         }
 
